@@ -13,6 +13,8 @@
 #define PDM_100K_GND	0b10
 #define PDM_HIGH_IMP	0b11
 
+void DAC121_initRegister(uint8_t i2cAddr, uint8_t mode, uint16_t data);
+
 void DAC121_setPowerDownMode(uint8_t i2cAddr, uint8_t mode);
 uint8_t DAC121_getPowerDownMode(uint8_t i2cAddr);
 
