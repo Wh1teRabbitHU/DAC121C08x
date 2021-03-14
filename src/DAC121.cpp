@@ -1,5 +1,12 @@
 #include <DAC121.h>
 
+void DAC121_initRegister(uint8_t i2cAddr, uint8_t mode, uint16_t data) {
+	uint16_t maskedMode = (mode << 12) & PDM_MASK;
+	uint16_t maskedData = data & DATA_MASK;
+
+	I2C_writeToModule(i2cAddr, maskedData | maskedMode);
+}
+
 void DAC121_setPowerDownMode(uint8_t i2cAddr, uint8_t mode) {
 	uint16_t registerVal = I2C_readFromModule(i2cAddr);
 
