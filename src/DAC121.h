@@ -1,7 +1,7 @@
 #ifndef DAC121
 #define DAC121
 
-#include <I2C.h>
+#include <I2C_8Bit.h>
 
 #define DATA_MASK       0b111111111111
 #define PDM_MASK		0b11 << 12
